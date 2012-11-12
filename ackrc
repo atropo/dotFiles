@@ -1,0 +1,4 @@
+--type-set=properties=.properties
+--type-set=jsp=.jsp
+--type-set=jar=.jar
+--ignore-dir=build
