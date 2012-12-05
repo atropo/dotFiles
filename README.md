@@ -1,4 +1,4 @@
-dotFiles
+Configuration files
 ========
 
-My dot files
+Some of my configuration files.
