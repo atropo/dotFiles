@@ -1,4 +1,7 @@
 --type-set=properties=.properties
 --type-set=jsp=.jsp
 --type-set=jar=.jar
+--type-set=gif=.gif
+--type-set=jpg=.jpg
+--type-set=png=.png
 --ignore-dir=build

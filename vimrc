@@ -1,5 +1,6 @@
 filetype plugin indent on
 set nocompatible
+set autoread
 
 "Setup di vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -76,6 +77,7 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 " Set extra options when running in GUI mode
 if has("gui_running")
 	cd  ~
+	set background=dark
 	"No scrollbar
 	set guioptions-=r
 	set guioptions-=R
