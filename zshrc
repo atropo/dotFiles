@@ -29,7 +29,7 @@ ZSH_THEME="alanpeabody"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git taskwarrior debian zsh-syntax-highlighting dircycle jira) 
+plugins=(git taskwarrior zsh-syntax-highlighting dircycle jira tmux) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,11 +52,17 @@ setopt extendedglob
 alias gsi="git svn info"
 alias gsl="git svn log --show-commit --oneline"
 
+#ack-grep additional aliases
+alias ackf="ack -f -g"
+
+#kill tomcat when goes in permgen space
+alias kt="kill -9 `pgrep -f tomcat`"
+
 #disable auto correct
 unsetopt correct_all
 
 #add local scripts to path
-PATH=$PATH:~/scripts/sh/
+PATH=$PATH:~/scripts/sh/:~/java/android-sdk-linux/platform-tools:~/java/android-sdk-linux/tools
 
 #Function to calculate the difference beetween two dates
 datediff() {
@@ -64,4 +70,17 @@ datediff() {
 	        d2=$(date -d "$2" +%s)
 		    echo $(( (d1 - d2) / 86400 )) days
 	    }
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386/
 
+#Setting of mysql promt with colors
+export MYSQL_PS1="mysql@tbg (\d)> "
+
+alias mysql='rlwrap -apassword_prompt -p"green" mysql'
+
+#Alias per ag silver searcher
+alias ag-jsp='ag -G \.jsp'
+alias ag-java='ag -G \.java'
+alias ag-prop='ag -G \.properties'
+alias ag-xml='ag -G \.xml'
+alias ag-html='ag -G \.\(html\|html\)'
+alias ag-css='ag -G \.css'
