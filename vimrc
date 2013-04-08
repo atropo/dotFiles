@@ -1,13 +1,12 @@
 filetype plugin indent on
 set nocompatible
 set autoread
+autocmd BufEnter * silent! lcd %:p:h
 
 "Setup di vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
-" Home as default directory
 
 " let Vundle manage Vundle
 "  " required! 
@@ -15,7 +14,8 @@ Bundle 'gmarik/vundle'
 
 "Bundle su github
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
@@ -31,6 +31,8 @@ Bundle 'vim-scripts/SearchComplete'
 Bundle 'vim-scripts/LustyJuggler'
 Bundle 'benmills/vimux'
 Bundle 'vim-scripts/IndexedSearch'
+Bundle 'Raimondi/delimitMate.git'
+Bundle 'rking/ag.vim'
 
 "Vim scripts-repos
 Bundle 'L9'
@@ -40,7 +42,7 @@ Bundle 'FuzzyFinder'
 Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
 
-let g:Powerline_symbols = 'fancy'
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set encoding=utf-8
 set modelines=0
 
