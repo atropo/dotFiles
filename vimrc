@@ -1,5 +1,5 @@
-filetype plugin indent on
 set nocompatible
+filetype off
 set autoread
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -33,6 +33,11 @@ Bundle 'benmills/vimux'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
+Bundle 'vim-scripts/RelOps'
+
+" Play2 framework suppor
+Bundle 'derekwyatt/vim-scala.git'
+Bundle 'gre/play2vim'
 
 "Vim scripts-repos
 Bundle 'L9'
@@ -41,6 +46,9 @@ Bundle 'FuzzyFinder'
 "Colorschemes
 Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
+
+" After all vundle bundles you turn on the filetypes
+filetype plugin indent on
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set encoding=utf-8
@@ -177,3 +185,10 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \ 'jsp' : 1,
     \}
+
+"Quick way to toggle show invisibles
+nmap <leader>l :set list!<CR>
+set lcs=tab:▸\ ,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
