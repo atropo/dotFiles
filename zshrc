@@ -29,7 +29,7 @@ ZSH_THEME="alanpeabody"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git taskwarrior zsh-syntax-highlighting dircycle jira tmux) 
+plugins=(git taskwarrior zsh-syntax-highlighting dircycle jira tmux history-substring-search themes nyan npm pj)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,10 +40,12 @@ alias ack='ack-grep'
 #SSH aliases
 alias duff='ssh duff'
 alias jafar='ssh jafar'
-alias alicia='ssh alicia'
 alias wba1='ssh wba1'
 alias amber='ssh amber'
 alias truce='ssh truce'
+alias krusty='ssh krusty'
+alias plinto='ssh plinto'
+alias bizserver='ssh bizserver'
 
 #Extended globbing
 setopt extendedglob
@@ -84,3 +86,17 @@ alias ag-prop='ag -G \.properties'
 alias ag-xml='ag -G \.xml'
 alias ag-html='ag -G \.\(html\|html\)'
 alias ag-css='ag -G \.css'
+
+#Alias per play2
+alias p2='~/bin/play-2.1.1/play'
+
+#Alias x estensioni
+alias -s html='firefox'
+
+#Alias x gcalcli
+alias gcalm='gcalcli calm'
+alias gcalw='gcalcli calw'
+
+#Config for pj plugin (project folders)
+EDITOR=gvim
+PROJECT_PATHS=(~/netProgetti ~/playProgetti ~/progetti)
