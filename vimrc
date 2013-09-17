@@ -1,4 +1,5 @@
 set nocompatible
+set number
 filetype off
 set autoread
 autocmd BufEnter * silent! lcd %:p:h
@@ -13,9 +14,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "Bundle su github
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'mattn/emmet-vim'
+Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
@@ -26,33 +26,44 @@ Bundle 'skroll/vim-taghighlight'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'scrooloose/nerdcommenter'
-
-Bundle 'vim-scripts/SearchComplete'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-repeat'
 Bundle 'vim-scripts/LustyJuggler'
-Bundle 'benmills/vimux'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
-Bundle 'vim-scripts/RelOps'
+Bundle "pangloss/vim-javascript"
+Bundle "leshill/vim-json"
 
-" Play2 framework suppor
+"Play2 framework and scala support
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'gre/play2vim'
+Bundle 'tpope/vim-fugitive'
 
-"Vim scripts-repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 "Colorschemes
 Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
 
-" After all vundle bundles you turn on the filetypes
+"Syntastic should ignore angularJS ng-attributes in HTML files
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+"Let vim-airline use nice fonts
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 0
+
+"Setting the expanding key of emmet (ex zencoding)
+let g:user_emmet_expandabbr_key = '<c-e>'
+let g:use_emmet_complete_tag = 1
+
+" After all vundle bundle: you turn on the filetypes
 filetype plugin indent on
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set encoding=utf-8
 set modelines=0
+
 
 set ai "Auto ident
 set si "Smart ident
@@ -192,3 +203,10 @@ set lcs=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom autocommands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufWritePost dati_server.markdown !/home/giacomo/scripts/sh/update_dati_server
+
+"Clear the sign column
+highlight clear SignColumn
