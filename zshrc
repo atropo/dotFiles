@@ -29,7 +29,7 @@ ZSH_THEME="alanpeabody"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git taskwarrior zsh-syntax-highlighting dircycle jira tmux history-substring-search themes nyan npm pj)
+plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,6 +81,7 @@ alias mysql='rlwrap -apassword_prompt -p"green" mysql'
 
 #Alias per ag silver searcher
 alias ag-jsp='ag -G \.jsp'
+alias ag-js='ag -G \.js'
 alias ag-java='ag -G \.java'
 alias ag-prop='ag -G \.properties'
 alias ag-xml='ag -G \.xml'
@@ -96,6 +97,9 @@ alias -s html='firefox'
 #Alias x gcalcli
 alias gcalm='gcalcli calm'
 alias gcalw='gcalcli calw'
+
+#Alias per bower
+alias bower='noglob bower'
 
 #Config for pj plugin (project folders)
 EDITOR=gvim
