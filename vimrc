@@ -34,9 +34,10 @@ Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
+Bundle "terryma/vim-multiple-cursors"
 
 "Play2 framework and scala support
-Bundle 'derekwyatt/vim-scala.git'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'gre/play2vim'
 Bundle 'tpope/vim-fugitive'
 
@@ -48,7 +49,7 @@ Bundle 'altercation/vim-colors-solarized'
 "Syntastic should ignore angularJS ng-attributes in HTML files
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
-"Let vim-airline use nice fonts
+"vim-airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 0
