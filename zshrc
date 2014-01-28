@@ -41,11 +41,13 @@ alias ack='ack-grep'
 alias duff='ssh duff'
 alias jafar='ssh jafar'
 alias wba1='ssh wba1'
+alias wbatbg='ssh wbatbg'
 alias amber='ssh amber'
 alias truce='ssh truce'
 alias krusty='ssh krusty'
 alias plinto='ssh plinto'
 alias bizserver='ssh bizserver'
+alias baxter='ssh baxter'
 
 #Extended globbing
 setopt extendedglob
@@ -89,7 +91,7 @@ alias ag-html='ag -G \.\(html\|html\)'
 alias ag-css='ag -G \.css'
 
 #Alias per play2
-alias p2='~/bin/play-2.1.1/play'
+alias p2='~/bin/play-2.1.5/play'
 
 #Alias x estensioni
 alias -s html='firefox'
