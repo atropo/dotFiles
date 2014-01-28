@@ -34,7 +34,6 @@ Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
-Bundle "terryma/vim-multiple-cursors"
 
 "Play2 framework and scala support
 Bundle 'derekwyatt/vim-scala'
@@ -116,6 +115,9 @@ endif
 """""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""
+
+"Change the case of the first letter of a word
+nmap <leader>~ m`b~``
 
 "LustyJuggler buffer explorer remapping
 map <leader>b : LustyJuggler<cr>
