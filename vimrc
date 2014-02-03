@@ -74,7 +74,7 @@ let g:sql_type_default = 'mysql'
 
 """""""""""""" Ctrl-P config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*  
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/platforms/*  
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
   \ 'file': '\v\.(exe|so|dll|class|jar)$',
@@ -84,6 +84,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'r'
 "let g:ctrlp_user_command ='ack -f'
+
 
 "Turn on the wild menu
 set wildmenu
