@@ -29,7 +29,7 @@ ZSH_THEME="alanpeabody"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower)
+plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower jira)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,7 +91,8 @@ alias ag-html='ag -G \.\(html\|html\)'
 alias ag-css='ag -G \.css'
 
 #Alias per play2
-alias p2='~/bin/play-2.1.5/play'
+alias p215='~/bin/play-2.1.5/play'
+alias p221='~/bin/play-2.2.1/play'
 
 #Alias x estensioni
 alias -s html='firefox'
