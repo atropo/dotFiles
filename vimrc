@@ -8,6 +8,9 @@ autocmd BufEnter * silent! lcd %:p:h
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"Set history to 1000
+set history=1000
+
 
 " let Vundle manage Vundle
 "  " required! 
@@ -28,12 +31,11 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-repeat'
-Bundle 'vim-scripts/LustyJuggler'
-Bundle 'vim-scripts/IndexedSearch'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
 Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
+
 
 "Play2 framework and scala support
 Bundle 'derekwyatt/vim-scala'
@@ -116,6 +118,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""
+
 
 "Change the case of the first letter of a word
 nmap <leader>~ m`b~``
