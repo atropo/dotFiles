@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="alanpeabody"
+ZSH_THEME="bureau"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -29,7 +29,7 @@ ZSH_THEME="alanpeabody"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower jira)
+plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower jira docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,7 +46,7 @@ alias amber='ssh amber'
 alias truce='ssh truce'
 alias krusty='ssh krusty'
 alias plinto='ssh plinto'
-alias bizserver='ssh bizserver'
+alias gordian='ssh gordian'
 alias baxter='ssh baxter'
 
 #Extended globbing
@@ -74,7 +74,7 @@ datediff() {
 	        d2=$(date -d "$2" +%s)
 		    echo $(( (d1 - d2) / 86400 )) days
 	    }
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386/
+export JAVA_HOME=/opt/jdk1.7.0_67/
 
 #Setting of mysql promt with colors
 export MYSQL_PS1="mysql@tbg (\d)> "
