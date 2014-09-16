@@ -29,7 +29,6 @@ Bundle 'skroll/vim-taghighlight'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-repeat'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
@@ -95,13 +94,17 @@ set wildmode=list:longest,full
 "Ack-grep plugin configuration
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
+" Solarized dark as theme for vim & gvim
+colorscheme solarized
+set background=dark
+
 """""""""""""""""""""""""""""""""""""""""
 " ONLY FOR GVIM
 """"""""""""""""""""""""""""""""""""""""
 " Set extra options when running in GUI mode
 if has("gui_running")
 	cd  ~
-	set background=dark
+"	set background=dark
 	"No scrollbar
 	set guioptions-=r
 	set guioptions-=R
@@ -109,7 +112,7 @@ if has("gui_running")
 	set guioptions-=L
 	set guioptions-=T
 	set guioptions-=m
-	colorscheme solarized
+"	colorscheme solarized
 	set cursorline
 	set showmode
 	set showcmd
