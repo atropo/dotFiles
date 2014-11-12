@@ -22,6 +22,7 @@ Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
@@ -32,19 +33,32 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-repeat'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
-Bundle "pangloss/vim-javascript"
 Bundle "leshill/vim-json"
+Bundle "d11wtq/ctrlp_bdelete.vim.git"
 
+"Javascript / Angular
+Bundle "pangloss/vim-javascript"
+Bundle "othree/javascript-libraries-syntax.vim"
+Bundle "MichaelRFairhurst/angular-dep.vim"
 
 "Play2 framework and scala support
 Bundle 'derekwyatt/vim-scala'
 Bundle 'gre/play2vim'
-Bundle 'tpope/vim-fugitive'
 
 
 "Colorschemes
 Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chankaward/vim-railscasts-theme'
+Bundle 'abra/vim-abra'
+
+
+"Ctrlp-delete init
+call ctrlp_bdelete#init()
+
+"Javascript libraries syntax used
+let g:used_javascript_libs = 'jquery,underscore,angularjs'
+
 
 "Syntastic should ignore angularJS ng-attributes in HTML files
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
@@ -75,7 +89,7 @@ let g:sql_type_default = 'mysql'
 
 """""""""""""" Ctrl-P config
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/platforms/*  
+set wildignore+=*/.hg/*,*/.svn/*,*/build/*,*/platforms/*  
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
   \ 'file': '\v\.(exe|so|dll|class|jar)$',
@@ -122,6 +136,15 @@ endif
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""
 
+"F5 to open buffer list and open a specific buffer with number
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+"Fugitive mappings
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gb :Gblam<cr>
+nmap <leader>gl :Glog<cr>
+nmap <leader>gvd :Gvdiff 
+
 
 "Change the case of the first letter of a word
 nmap <leader>~ m`b~``
@@ -135,7 +158,6 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
-"
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -143,12 +165,8 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 "Search word under cursor with ack
 noremap <Leader>a :Ack <cword><cr>
 
-
-
-
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -157,7 +175,6 @@ autocmd BufReadPost *
      \ endif
 " Remember info about open buffers on close
 set viminfo^=%
-
 
 
 """""""""""""""""""""""""""""""""""
