@@ -35,6 +35,7 @@ Bundle 'Raimondi/delimitMate.git'
 Bundle 'rking/ag.vim'
 Bundle "leshill/vim-json"
 Bundle "d11wtq/ctrlp_bdelete.vim.git"
+Bundle "mhinz/vim-signify"
 
 "Javascript / Angular
 Bundle "pangloss/vim-javascript"
@@ -51,6 +52,11 @@ Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chankaward/vim-railscasts-theme'
 Bundle 'abra/vim-abra'
+
+
+"Signify configuration
+"Use only git = faster
+let g:signify_vcs_list = [ 'git']
 
 
 "Ctrlp-delete init
@@ -136,8 +142,14 @@ endif
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""
 
+"Signify, git simbols in gutter, plugin mappings
+nmap  <leader>st :SignifyToggle<cr>
+nmap  <leader>sh :SignifyToggleHighlight<cr>
+nmap  <leader>sr :SignifyRefresh<cr>
+<cr>
+
 "F5 to open buffer list and open a specific buffer with number
-:nnoremap <F5> :buffers<CR>:buffer<Space>
+:nnoremap <F9> :buffers<CR>:buffer<Space>
 
 "Fugitive mappings
 nmap <leader>gs :Gstatus<cr>
