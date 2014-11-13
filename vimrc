@@ -36,6 +36,7 @@ Bundle 'rking/ag.vim'
 Bundle "leshill/vim-json"
 Bundle "d11wtq/ctrlp_bdelete.vim.git"
 Bundle "mhinz/vim-signify"
+Bundle "mhinz/vim-startify"
 
 "Javascript / Angular
 Bundle "pangloss/vim-javascript"
@@ -146,7 +147,6 @@ endif
 nmap  <leader>st :SignifyToggle<cr>
 nmap  <leader>sh :SignifyToggleHighlight<cr>
 nmap  <leader>sr :SignifyRefresh<cr>
-<cr>
 
 "F5 to open buffer list and open a specific buffer with number
 :nnoremap <F9> :buffers<CR>:buffer<Space>
@@ -249,3 +249,20 @@ au BufWritePost dati_server.markdown !/home/giacomo/scripts/sh/update_dati_serve
 
 "Clear the sign column
 highlight clear SignColumn
+
+
+""""""" Startify start banner
+let g:startify_custom_header = [
+			 \'____   ____.__          _________      _____   ',
+			 \'\   \ /   /|__| _____   \______  \    /  |  |  ',
+			 \' \   Y   / |  |/     \      /    /   /   |  |_ ',
+			 \'  \     /  |  |  Y Y  \    /    /   /    ^   / ',
+			 \'   \___/   |__|__|_|  /   /____/   /\____   |  ',
+			 \'                    \/             \/    |__|  ',
+			 \ '',
+			 \ '                VIM - Vi IMproved             ',
+			 \ '              by Bram Moolenaar et al.        ',
+			 \ '',
+			 \ '',
+			 \ ]
+
