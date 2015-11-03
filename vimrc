@@ -1,4 +1,5 @@
 set nocompatible
+nmap <leader>gs :Gstatus<cr>
 set number
 filetype off
 set autoread
@@ -32,11 +33,17 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-repeat'
 Bundle 'Raimondi/delimitMate.git'
-Bundle 'rking/ag.vim'
 Bundle "leshill/vim-json"
 Bundle "d11wtq/ctrlp_bdelete.vim.git"
 Bundle "mhinz/vim-signify"
 Bundle "mhinz/vim-startify"
+Bundle "junegunn/limelight.vim"
+Bundle "justinmk/vim-gtfo"
+Bundle "vim-scripts/fontsize"
+Bundle "nathanaelkane/vim-indent-guides"
+Bundle "vasconcelloslf/vim-interestingwords"
+Bundle "shumphrey/fugitive-gitlab.vim"
+Bundle 'gabesoft/vim-ags.git'
 
 "Javascript / Angular
 Bundle "pangloss/vim-javascript"
@@ -53,7 +60,11 @@ Bundle 'pyte'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chankaward/vim-railscasts-theme'
 Bundle 'abra/vim-abra'
+Bundle 'NLKNguyen/papercolor-theme'
+Bundle 'morhetz/gruvbox'
 
+"Vim indent-guides
+let g:indent_guides_guide_size = 1
 
 "Signify configuration
 "Use only git = faster
@@ -82,7 +93,8 @@ let g:use_emmet_complete_tag = 1
 " After all vundle bundle: you turn on the filetypes
 filetype plugin indent on
 
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+set guifont=Fira\ Mono\ for\ Powerline\ 11
 set encoding=utf-8
 set modelines=0
 
@@ -113,11 +125,20 @@ set wildmenu
 set wildmode=list:longest,full
 
 "Ack-grep plugin configuration
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+"let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+"Use Ag as ack-grep prg
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Gitlab as remote repository for Fugitive
+let g:fugitive_gitlab_domains = ['http://git.thebusinessgame.it']
+
+"Workaround to oen the browse with netrw
+" https://github.com/tpope/vim-fugitive/issues/518#issuecomment-58961059
+let g:netrw_browsex_viewer = "gnome-open-fixed"
 
 " Solarized dark as theme for vim & gvim
-colorscheme solarized
-set background=dark
+colorscheme desert
 
 """""""""""""""""""""""""""""""""""""""""
 " ONLY FOR GVIM
@@ -137,11 +158,17 @@ if has("gui_running")
 	set cursorline
 	set showmode
 	set showcmd
+	" Solarized dark as theme for vim & gvim
+	"colorscheme solarized
+	colorscheme gruvbox
+	set background=dark
 endif
 
 """""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""
+
+nmap <leader>h :nohl<cr>
 
 "Signify, git simbols in gutter, plugin mappings
 nmap  <leader>st :SignifyToggle<cr>
@@ -153,6 +180,8 @@ nmap  <leader>sr :SignifyRefresh<cr>
 
 "Fugitive mappings
 nmap <leader>gs :Gstatus<cr>
+nmap <leader>gp :Gpush<cr>
+nmap <leader>gw :Gbrowse<cr>
 nmap <leader>gb :Gblam<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gvd :Gvdiff 
