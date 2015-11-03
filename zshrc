@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bureau"
+#ZSH_THEME="miloshadzic"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -29,7 +30,7 @@ ZSH_THEME="bureau"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower jira docker)
+plugins=(git taskwarrior zsh-syntax-highlighting dircycle tmux history-substring-search themes nyan npm pj bower  docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,14 +41,16 @@ alias ack='ack-grep'
 #SSH aliases
 alias duff='ssh duff'
 alias jafar='ssh jafar'
-alias wba1='ssh wba1'
-alias wbatbg='ssh wbatbg'
+alias wba='ssh wba'
 alias amber='ssh amber'
 alias truce='ssh truce'
 alias krusty='ssh krusty'
 alias plinto='ssh plinto'
 alias gordian='ssh gordian'
 alias baxter='ssh baxter'
+alias altair='ssh altair'
+alias deploy='ssh deploy@krusty'
+alias client='ssh client@krusty'
 
 #Extended globbing
 setopt extendedglob
@@ -74,7 +77,8 @@ datediff() {
 	        d2=$(date -d "$2" +%s)
 		    echo $(( (d1 - d2) / 86400 )) days
 	    }
-export JAVA_HOME=/opt/jdk1.7.0_67/
+#export JAVA_HOME=/opt/jdk1.8.0_45/
+export JAVA_HOME=/opt/jdk1.7.0_79/
 
 #Setting of mysql promt with colors
 export MYSQL_PS1="mysql@tbg (\d)> "
@@ -104,6 +108,9 @@ alias gcalw='gcalcli calw'
 #Alias per bower
 alias bower='noglob bower'
 
+#Alias generici
+alias myip='wget -q -O - ifconfig.co'
+
 #Config for pj plugin (project folders)
 EDITOR=gvim
-PROJECT_PATHS=(~/netProgetti ~/playProgetti ~/progetti)
+PROJECT_PATHS=(~/git)
