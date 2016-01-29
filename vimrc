@@ -43,6 +43,12 @@ Bundle "nathanaelkane/vim-indent-guides"
 Bundle "vasconcelloslf/vim-interestingwords"
 Bundle "shumphrey/fugitive-gitlab.vim"
 Bundle 'gabesoft/vim-ags.git'
+Bundle 'gcmt/taboo.vim'
+
+
+"Taboo configuration
+set guioptions-=e
+let g:taboo_tab_format='[%N]%f%m '  
 
 "Snippets support
 Plugin 'SirVer/ultisnips'
