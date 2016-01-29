@@ -25,7 +25,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
-Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'skroll/vim-taghighlight'
 Bundle 'tsaleh/vim-matchit'
@@ -45,6 +44,11 @@ Bundle "vasconcelloslf/vim-interestingwords"
 Bundle "shumphrey/fugitive-gitlab.vim"
 Bundle 'gabesoft/vim-ags.git'
 
+"Snippets support
+Plugin 'SirVer/ultisnips'
+"Snippets db
+Plugin 'honza/vim-snippets'
+
 "Javascript / Angular
 Bundle "pangloss/vim-javascript"
 Bundle "othree/javascript-libraries-syntax.vim"
@@ -62,6 +66,9 @@ Bundle 'chankaward/vim-railscasts-theme'
 Bundle 'abra/vim-abra'
 Bundle 'NLKNguyen/papercolor-theme'
 Bundle 'morhetz/gruvbox'
+
+"Vim terminal configuration for vim-gtfo
+let g:gtfo#terminals = { 'unix' : 'xfce4-terminal' }
 
 "Vim indent-guides
 let g:indent_guides_guide_size = 1
@@ -183,7 +190,7 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>gp :Gpush<cr>
 nmap <leader>gw :Gbrowse<cr>
 nmap <leader>gb :Gblam<cr>
-nmap <leader>gl :Glog<cr>
+nmap <leader>gl :Glog --pretty=format:'[%h]\ <%cn>\ [%cd]\ %s'<cr>
 nmap <leader>gvd :Gvdiff 
 
 
