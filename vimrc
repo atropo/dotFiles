@@ -4,6 +4,7 @@ set number
 filetype off
 set autoread
 autocmd BufEnter * silent! lcd %:p:h
+set guiheadroom=100
 
 "Setup di vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -20,7 +21,7 @@ Bundle 'gmarik/vundle'
 "Bundle su github
 Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-airline'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'easymotion/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
@@ -44,6 +45,12 @@ Bundle "vasconcelloslf/vim-interestingwords"
 Bundle "shumphrey/fugitive-gitlab.vim"
 Bundle 'gabesoft/vim-ags.git'
 Bundle 'gcmt/taboo.vim'
+Bundle 'Valloric/ListToggle'
+Bundle 'airblade/vim-rooter'
+Bundle 'vim-scripts/draw.vim.git'
+Bundle 'sstallion/vim-cursorline'
+Bundle 'andreshazard/vim-freemarker'
+
 
 
 "Taboo configuration
@@ -72,6 +79,11 @@ Bundle 'chankaward/vim-railscasts-theme'
 Bundle 'abra/vim-abra'
 Bundle 'NLKNguyen/papercolor-theme'
 Bundle 'morhetz/gruvbox'
+
+"Vim rooter
+"Stop printing cwd
+let g:rooter_silent_chdir = 1
+
 
 "Vim terminal configuration for vim-gtfo
 let g:gtfo#terminals = { 'unix' : 'xfce4-terminal' }
@@ -107,7 +119,7 @@ let g:use_emmet_complete_tag = 1
 filetype plugin indent on
 
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
-set guifont=Fira\ Mono\ for\ Powerline\ 11
+set guifont=Fira\ Mono\ for\ Powerline\ 10
 set encoding=utf-8
 set modelines=0
 
@@ -120,8 +132,8 @@ set wrap "Wrap lines
 let g:sql_type_default = 'mysql'
 
 """""""""""""" Ctrl-P config
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
-set wildignore+=*/.hg/*,*/.svn/*,*/build/*,*/platforms/*  
+set wildignore+=*.so,*.swp,*.zip,*.class
+set wildignore+=*/.hg/*,*/.svn/*,*/build/*,*/platforms/*,*/dist/*,*/.git/*,*/target/*
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
   \ 'file': '\v\.(exe|so|dll|class|jar)$',
@@ -180,6 +192,20 @@ endif
 """""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 nmap <leader>h :nohl<cr>
 
@@ -196,15 +222,21 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>gp :Gpush<cr>
 nmap <leader>gw :Gbrowse<cr>
 nmap <leader>gb :Gblam<cr>
-nmap <leader>gl :Glog --pretty=format:'[%h]\ <%cn>\ [%cd]\ %s'<cr>
+"nmap <leader>gl :Glog --pretty=format:'[%h]\ <%cn>\ [%cd]\ %s'<cr>
 nmap <leader>gvd :Gvdiff 
+
+"Mappings to explore quickfix with fugitive Glog
+nmap [q :cprevious<cr>
+nmap ]q :cnext<cr>
+nmap [Q :cfirst<cr>
+nmap ]Q :clast<cr>
 
 
 "Change the case of the first letter of a word
 nmap <leader>~ m`b~``
 
 "LustyJuggler buffer explorer remapping
-map <leader>b : LustyJuggler<cr>
+"map <leader>b : LustyJuggler<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -244,6 +276,7 @@ set hlsearch
 "NERDTree
 let NERDChristmasTree = 1
 let NERDTreeWinSize = 45
+"let NERDTreeQuitOnOpen=1
 nmap <F12> :NERDTreeToggle<CR>
 nmap <F11> :TagbarToggle<CR>
 map <F2> <Esc>:1,$!xmllint --format -<CR>
@@ -279,7 +312,8 @@ let g:mta_filetypes = {
     \}
 
 "Quick way to toggle show invisibles
-nmap <leader>l :set list!<CR>
+"Already used in a plugin
+"nmap <leader>l :set list!<CR>
 set lcs=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
