@@ -49,6 +49,7 @@ alias plinto='ssh plinto'
 alias gordian='ssh gordian'
 alias baxter='ssh baxter'
 alias altair='ssh altair'
+alias bryger='ssh bryger'
 alias deploy='ssh deploy@krusty'
 alias client='ssh client@krusty'
 
@@ -77,8 +78,10 @@ datediff() {
 	        d2=$(date -d "$2" +%s)
 		    echo $(( (d1 - d2) / 86400 )) days
 	    }
-#export JAVA_HOME=/opt/jdk1.8.0_45/
-export JAVA_HOME=/opt/jdk1.7.0_79/
+export JAVA_HOME=/opt/jdk1.8.0_45/
+export JRE_HOME=/opt/jdk1.6.0_45/jre/
+#export JAVA_HOME=/opt/jdk1.7.0_79/
+#export JRE_HOME=/opt/jdk1.7.0_79/jre/
 
 #Setting of mysql promt with colors
 export MYSQL_PS1="mysql@tbg (\d)> "
@@ -114,3 +117,16 @@ alias myip='wget -q -O - ifconfig.co'
 #Config for pj plugin (project folders)
 EDITOR=gvim
 PROJECT_PATHS=(~/git)
+
+#Mine functions
+#
+unix-filenames () {
+	rename 'y/ /_/' *
+}
+
+find-duplicate-files () {
+
+}
+
+export DISABLE_AUTO_TITLE='true'
+
